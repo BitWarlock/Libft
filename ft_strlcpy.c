@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 04:06:03 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/07 04:44:25 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/08 09:59:00 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 
 	i = 0;
-	len = 0;
-	while (src[len])
-		len++;
+	len = ft_strlen(src);
 	if (dstsize != 0)
 	{
 		while (src[i] && i < dstsize - 1)
