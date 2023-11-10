@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 06:12:15 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/07 06:15:35 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/09 23:08:40 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	ptr = malloc(count * size);
 	if (ptr)
-		ft_memset(ptr, 0, count * size);
+		ft_bzero(ptr, count * size);
 	return (ptr);
 }
