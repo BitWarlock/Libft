@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:20:13 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/08 12:54:18 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/16 17:03:22 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if (s1 == NULL)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
 	while (s1[start] && check(s1[start], (char *)set))
 		start++;
 	while (end >= start && check(s1[end], (char *)set))
