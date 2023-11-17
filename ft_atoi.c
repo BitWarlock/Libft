@@ -6,11 +6,12 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 05:52:27 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/07 05:57:54 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/14 13:44:59 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 int	ft_atoi(const char *str)
 {
@@ -30,7 +31,7 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + *str - '0';
+		res = res * 10 + (*str - '0');
 		str++;
 	}
 	return (sign * res);
