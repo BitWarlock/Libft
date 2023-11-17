@@ -6,7 +6,7 @@
 #    By: mrezki <mrezki@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 05:47:36 by mrezki            #+#    #+#              #
-#    Updated: 2023/11/08 12:56:10 by mrezki           ###   ########.fr        #
+#    Updated: 2023/11/17 02:48:51 by mrezki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 	ft_calloc.c ft_strdup.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c \
-
+	ft_split.c ft_strmapi.c ft_striteri.c
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 %.o: %.c
 	@$(CC) -c -o $@ $< $(CFLAGS)
@@ -34,6 +36,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+
+bonus: $(OBJS_BONUS)
+	@ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
 	@$(RM) $(OBJS)
