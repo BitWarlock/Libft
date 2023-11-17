@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 06:24:50 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/08 06:27:28 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/16 17:38:43 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (s == NULL)
+		return ;
 	i = -1;
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
