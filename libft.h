@@ -6,14 +6,13 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 05:18:12 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/19 21:49:51 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/21 18:08:15 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFFER 1024
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
