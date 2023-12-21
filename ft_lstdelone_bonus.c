@@ -6,13 +6,13 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 04:23:09 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/19 00:31:45 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/23 22:14:32 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:56:20 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/10 02:25:33 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/20 16:44:38 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*ito(int len, long n, int sign)
 		len--;
 	}
 	if (sign)
-		ptr[len] = '-';
+		ptr[0] = '-';
 	return (ptr);
 }
 

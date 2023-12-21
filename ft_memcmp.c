@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 05:31:37 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/16 14:49:39 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/19 12:41:53 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+//
+// int main(void)
+// {
+// 	char	*s1 = "1234";
+// 	char	*s2 = "1234";
+// 	printf("%d\n", ft_memcmp(s1, s2, 4));
+//
+//
+// 	return EXIT_SUCCESS;
+// }

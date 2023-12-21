@@ -6,14 +6,12 @@
 #    By: mrezki <mrezki@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 05:47:36 by mrezki            #+#    #+#              #
-#    Updated: 2023/11/21 11:00:41 by mrezki           ###   ########.fr        #
+#    Updated: 2023/12/20 14:05:17 by mrezki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 	ft_isascii.c ft_isprint.c ft_strlen.c \
@@ -34,16 +32,16 @@ SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
+all: $(NAME)
+
 %.o: %.c libft.h
 	@$(CC) -c -o $@ $< $(CFLAGS)
 
-all: $(NAME)
-
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@$(AR) rcs $(NAME) $(OBJS)
 
 bonus: $(OBJS_BONUS)
-	@ar rcs $(NAME) $(OBJS_BONUS)
+	@$(AR) rcs $(NAME) $(OBJS_BONUS)
 
 clean:
 	@$(RM) $(OBJS) $(OBJS_BONUS)
@@ -51,9 +49,6 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 
-norm:
-	@norminette $(SRCS) libft.h
-
 re: fclean all
 
-.PHONY: clean fclean all re norm
+.PHONY: clean

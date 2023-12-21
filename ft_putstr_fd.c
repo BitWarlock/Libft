@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 06:24:50 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/16 17:38:43 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/20 20:44:33 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,19 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
 }
+// #include <fcntl.h>
+//
+// int main(void)
+// {
+// 	int fd = open("test1.txt", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+// 	if (fd < 0)
+// 		perror("Fail");
+// 	ft_putchar_fd('a', fd);
+// 	ft_putnbr_fd(123456, fd);
+// 	ft_putstr_fd("abcd\n", fd);
+// 	ft_putendl_fd("abcd", fd);
+//
+// 	close(fd);
+//
+// 	return EXIT_SUCCESS;
+// }

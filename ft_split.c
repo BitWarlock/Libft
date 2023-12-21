@@ -6,21 +6,20 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:52:09 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/19 03:56:57 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/07 17:14:27 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-char	*ft_new_token(size_t size)
+static char	*ft_new_token(size_t size)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(char) * size + 1);
+	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
-	ft_bzero(str, size);
 	return (str);
 }
 
@@ -34,8 +33,8 @@ static int	ft_count_tokens(char const *s, char c)
 		return (0);
 	state = 0;
 	tokens = 0;
-	i = 0;
-	while (s[i])
+	i = -1;
+	while (s[++i])
 	{
 		if (s[i] == c)
 			state = 0;
@@ -44,7 +43,6 @@ static int	ft_count_tokens(char const *s, char c)
 			state = 1;
 			++tokens;
 		}
-		i++;
 	}
 	return (tokens);
 }
@@ -79,35 +77,31 @@ static char	**free_all(char **tokens, int len)
 
 char	**ft_split(char const *s, char c)
 {
-	int		tok;
+	int		tok_n;
 	int		j;
-	int		k;
+	int		tok_len;
 	char	**tokens;
 
-	tokens = (char **)malloc(sizeof(char *) * (ft_count_tokens(s, c) + 1));
+	tokens = malloc(sizeof(char *) * (ft_count_tokens(s, c) + 1));
 	if (!tokens)
 		return (NULL);
-	tok = -1;
+	tok_n = -1;
 	j = 0;
-	while (++tok < ft_count_tokens(s, c))
+	while (++tok_n < ft_count_tokens(s, c))
 	{
-		k = 0;
-		tokens[tok] = ft_new_token(ft_token_len(&s[j], c));
-		if (!(tokens[tok]))
-			return (free_all(tokens, tok));
+		tok_len = 0;
+		tokens[tok_n] = ft_new_token(ft_token_len(&s[j], c));
+		if (!(tokens[tok_n]))
+			return (free_all(tokens, tok_n));
 		while (s[j] == c)
 			j++;
 		while (s[j] != c && s[j])
-			tokens[tok][k++] = s[j++];
-		tokens[tok][k] = '\0';
+			tokens[tok_n][tok_len++] = s[j++];
+		tokens[tok_n][tok_len] = '\0';
 	}
-	tokens[tok] = NULL;
+	tokens[tok_n] = NULL;
 	return (tokens);
 }
-
-//
-//
-// int main(void)
 // {
 //     char	**tokens;
 //     tokens = ft_split("--229-abc----229a2ac0-846b-11ee-b0f1-6798e89--", '-');

@@ -6,13 +6,13 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 02:49:00 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/19 00:31:20 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/11/23 22:14:09 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize_bonus(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	len;
 

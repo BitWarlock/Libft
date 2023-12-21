@@ -6,11 +6,12 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 05:47:21 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/16 17:02:34 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/20 15:41:05 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -31,3 +32,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+// #include <string.h>
+//
+// int main(void)
+// {
+// 	char	*hay = "foo bar war";
+// 	
+// 	char	*nee = "bar";
+// 	char	*ptr = ft_strnstr(hay, nee, -1);
+// 	printf("%s\n", ptr);
+//
+// 	return EXIT_SUCCESS;
+// }
