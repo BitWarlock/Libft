@@ -6,17 +6,18 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 05:18:12 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/23 22:11:40 by mrezki           ###   ########.fr       */
+/*   Updated: 2024/02/12 17:23:12 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -71,5 +72,46 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+// printf.
+
+typedef struct s_flags
+{
+	int	hash;
+	int	plus;
+	int	space;
+}		t_flags;
+
+typedef enum e_bool
+{
+	ifalse,
+	itrue
+}		t_bool;
+
+t_bool	check_flags(char c, t_flags *flags);
+void	init_flags(t_flags *flags);
+int		ft_printf(const char *format, ...);
+int		print_number(int n, t_flags *flags);
+int		ft_putchar_pf(char c);
+int		ft_puts(char *str);
+int		print_hex(unsigned int n, t_flags *flags, char c);
+int		print_string(char *str);
+int		print_address(void *n);
+int		print_unsigned(unsigned int n);
+
+// gnl
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 12288
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 69
+# endif
+
+int		locate(char *s);
+char	*strjoin(char *rest, char *buffer);
+char	*ft_free(char **ptr);
+char	*get_next_line(int fd);
 
 #endif

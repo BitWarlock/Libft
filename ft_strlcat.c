@@ -6,7 +6,7 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 04:07:56 by mrezki            #+#    #+#             */
-/*   Updated: 2023/11/16 17:01:46 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/22 10:36:07 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (lendst + lensrc);
 }
 //
+// #include <string.h>
+//
 // int	main(void)
 // {
-// 	char	dst[] = "abcdef";
+// 	char	dst[11] = "abcdef";
 // 	char	src[] = "1234";
-// 	printf("Return: %zu\ndst:%s\nsrc:%s\n", ft_strlcat(NULL, src, 0), dst, src);
-// 	// printf("ft_%zu\n%s\n", ft_strlcat(s, "1234", i), s);
+// 	printf("Return: %zu\ndst:%s\nsrc:%s\n", strlcat(dst, src, 11), dst, src);
 // }

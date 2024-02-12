@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 14:58:17 by mrezki            #+#    #+#             */
-/*   Updated: 2023/12/22 10:40:22 by mrezki           ###   ########.fr       */
+/*   Created: 2024/01/20 18:37:22 by mrezki            #+#    #+#             */
+/*   Updated: 2024/02/12 16:45:17 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
+int	ft_putchar_pf(char h)
 {
-	char	*ptr;
-	int		i;
+	write (1, &h, 1);
+	return (1);
+}
 
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	ptr = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!ptr)
-		return (NULL);
-	while (s[i])
-	{
-		ptr[i] = f(i, s[i]);
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+int	ft_puts(char *str)
+{
+	int	count;
+
+	count = -1;
+	while (str[++count])
+		ft_putchar_pf(str[count]);
+	return (count);
+}
+
+int	print_string(char *str)
+{
+	if (!str)
+		str = "(null)";
+	return (ft_puts(str));
 }

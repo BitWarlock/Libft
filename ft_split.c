@@ -6,12 +6,11 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:52:09 by mrezki            #+#    #+#             */
-/*   Updated: 2023/12/07 17:14:27 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/22 11:26:45 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 static char	*ft_new_token(size_t size)
 {

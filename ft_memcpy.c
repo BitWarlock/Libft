@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mrezki <mrezki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:25:01 by mrezki            #+#    #+#             */
-/*   Updated: 2023/12/20 16:55:11 by mrezki           ###   ########.fr       */
+/*   Updated: 2023/12/21 21:26:39 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <libc.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -29,8 +28,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 //
 // int main(void)
 // {
-// 	char	dst[] = "abcdef";
-// 	ft_memcpy(dst + 2, dst, 6);
+// 	char	dst[] = "12345678910";
+// 	ft_memmove(dst + 2, dst, 6);
 // 	printf("%s\n", dst);
 //
 // 	return EXIT_SUCCESS;
