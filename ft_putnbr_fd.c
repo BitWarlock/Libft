@@ -6,16 +6,36 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 06:32:48 by mrezki            #+#    #+#             */
-/*   Updated: 2023/12/20 20:53:26 by mrezki           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:47:39 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static int	count_digit(int i)
+{
+	unsigned int	a;
+	unsigned int	b;
+
+	a = 0;
+	if (i < 0)
+		b = i * -1;
+	else
+		b = i;
+	while (b != 0)
+	{
+		b /= 10;
+		a++;
+	}
+	return (a);
+}
+
+int	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
+	int		count;
 
+	count = count_digit(n);
 	nb = n;
 	if (nb < 0)
 	{
@@ -29,4 +49,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		ft_putchar_fd(nb % 10 + '0', fd);
+	return (count);
 }

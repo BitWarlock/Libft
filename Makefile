@@ -6,7 +6,7 @@
 #    By: mrezki <mrezki@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 05:47:36 by mrezki            #+#    #+#              #
-#    Updated: 2024/02/12 17:10:31 by mrezki           ###   ########.fr        #
+#    Updated: 2024/02/17 14:27:37 by mrezki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_printf.c \
 		utils.c print_char.c print_int.c print_hex.c get_next_line_bonus.c \
-		get_next_line_utils_bonus.c \
+		get_next_line_utils_bonus.c ft_fd_printf.c\
 
 
 OBJS		= $(SRCS:.c=.o)

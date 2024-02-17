@@ -6,7 +6,7 @@
 /*   By: mrezki <mrezki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:17:34 by mrezki            #+#    #+#             */
-/*   Updated: 2024/02/12 16:41:50 by mrezki           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:36:14 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	loop_string(va_list *args, const char *str, int *count)
 	}
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(int fd, const char *format, ...)
 {
 	va_list	args;
 	int		count;
@@ -73,7 +73,10 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	if (write (1, "", 0) == -1)
 		return (-1);
-	loop_string(&args, format, &count);
+	if (fd == 1)
+		loop_string(&args, format, &count);
+	else
+		loop_string_fd(&args, format, &count, fd);
 	va_end(args);
 	return (count);
 }

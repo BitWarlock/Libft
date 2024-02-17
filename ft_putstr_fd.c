@@ -6,21 +6,22 @@
 /*   By: mrezki <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 06:24:50 by mrezki            #+#    #+#             */
-/*   Updated: 2023/12/20 20:44:33 by mrezki           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:33:11 by mrezki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	if (s == NULL)
-		return ;
+		s = "(null)";
 	i = -1;
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
+	return (i);
 }
 // #include <fcntl.h>
 //
